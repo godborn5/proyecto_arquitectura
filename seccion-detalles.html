@@ -1,0 +1,1021 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>ADASCUA | Detalles del proyecto</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;40..900,400;14..32,600;14..32,700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        @font-face {
+            font-family: 'Horizon';
+            src: url('./Font/horizon.otf') format('opentype');
+            font-weight: normal;
+            font-style: normal;
+            font-display: swap;
+        }
+
+        body {
+            font-family: 'Horizon', 'Inter', sans-serif;
+            background: #000000;
+            color: #eef5ff;
+            scroll-behavior: smooth;
+        }
+
+        /* Fila superior - DISTRIBUCIÓN SIMÉTRICA CON ADASCUA CENTRADO */
+        .header-opciones {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 1.5rem 1rem 1rem 1rem;
+            flex-wrap: wrap;
+            z-index: 20;
+            max-width: 1400px;
+            margin: 0 auto;
+            gap: 2rem;
+            margin-left: 12%;
+        }
+
+        /* Grupo izquierdo */
+        .grupo-izquierdo {
+            display: flex;
+            gap: 1.2rem;
+            justify-content: flex-end;
+            flex: 1;
+        }
+
+        /* Grupo derecho */
+        .grupo-derecho {
+            display: flex;
+            gap: 1.2rem;
+            justify-content: flex-start;
+            flex: 1;
+        }
+
+        /* ADASCUA en el centro */
+        .adascua-centro {
+            text-align: center;
+            flex-shrink: 0;
+        }
+
+        .adascua-centro a {
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.3s ease;
+        }
+
+        .adascua-centro a:hover {
+            transform: scale(1.02);
+        }
+
+        /* Estilo para los botones de opción */
+        .opcion-texto {
+            background: transparent;
+            border: none;
+            font-size: 1rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-family: 'Horizon', 'Inter', sans-serif;
+            padding: 0.3rem 0;
+            letter-spacing: 0.5px;
+            white-space: nowrap;
+            text-decoration: none;
+            display: inline-block;
+            background: linear-gradient(135deg, #e0e0e0 0%, #888888 100%);
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+        }
+
+        .opcion-texto:hover {
+            background: linear-gradient(135deg, #FFFFFF 0%, #cccccc 100%);
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+            transform: translateY(-2px);
+        }
+
+        .adascua-grande {
+            font-family: 'Horizon', 'Inter', sans-serif;
+            font-size: clamp(1.5rem, 4vw, 2rem);
+            font-weight: 700;
+            letter-spacing: -0.03em;
+            background: linear-gradient(135deg, #FFFFFF 0%, #888888 100%);
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+        }
+
+        .made-by {
+            font-family: 'Horizon', 'Inter', sans-serif;
+            font-size: 0.4rem;
+            letter-spacing: 2px;
+            margin-top: 0.2rem;
+            background: linear-gradient(135deg, #e0e0e0 0%, #888888 100%);
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+            transition: all 0.3s ease;
+        }
+
+        .adascua-centro a:hover .made-by {
+            background: linear-gradient(135deg, #FFFFFF 0%, #cccccc 100%);
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+        }
+
+        /* Contenedor principal */
+        .detalles-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 1rem 2rem 2rem 2rem;
+        }
+
+        /* Media principal - SIN MARCO */
+        .media-principal {
+            width: 100%;
+            margin-bottom: 3rem;
+        }
+
+        .media-principal-contenido {
+            width: 100%;
+            border-radius: 24px;
+            overflow: hidden;
+            background: transparent;
+            min-height: 400px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .media-principal-contenido img,
+        .media-principal-contenido video {
+            width: 100%;
+            max-height: 80vh;
+            object-fit: contain;
+            display: block;
+            border-radius: 24px;
+        }
+
+        .secuencia-imagen {
+            width: 100%;
+            max-height: 80vh;
+            object-fit: contain;
+            display: block;
+            border-radius: 24px;
+        }
+
+        .titulo-principal {
+            text-align: center;
+            margin-top: 1rem;
+        }
+
+        .titulo-principal h3 {
+            font-family: 'Horizon', 'Inter', sans-serif;
+            font-size: 1.3rem;
+            font-weight: 600;
+            background: linear-gradient(120deg, #f0f4ff, #a0c4ff);
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+            text-align: center;
+        }
+
+        /* Galería de imágenes - 5 y 6 columnas para Futuro */
+        .galeria-container {
+            margin: 3rem 0;
+        }
+
+        .galeria-titulo {
+            text-align: center;
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 2rem;
+            background: linear-gradient(120deg, #f0f4ff, #a0c4ff);
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+        }
+
+        .grid-galeria-5 {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .grid-galeria-6 {
+            display: grid;
+            grid-template-columns: repeat(6, 1fr);
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .grid-item {
+            background: rgba(15, 25, 45, 0.3);
+            backdrop-filter: blur(4px);
+            border-radius: 16px;
+            overflow: hidden;
+            border: 1px solid rgba(70, 130, 200, 0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease, transform 0.5s ease;
+        }
+
+        .grid-item.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .grid-item:hover {
+            transform: translateY(-5px);
+            border-color: rgba(59, 130, 246, 0.5);
+            box-shadow: 0 10px 20px -5px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Imágenes normales (cuadradas) */
+        .grid-imagen {
+            width: 100%;
+            aspect-ratio: 1 / 1;
+            object-fit: cover;
+            display: block;
+        }
+
+        /* Imágenes de Vortex (Fuego interior) - Formato alargado horizontal */
+        .grid-imagen-vortex {
+            width: 100%;
+            aspect-ratio: 16 / 9;
+            object-fit: cover;
+            display: block;
+        }
+
+        /* Contenedor con imagen lateral y texto para Complejos */
+        .contenido-con-imagen {
+            display: flex;
+            align-items: flex-start;
+            gap: 2rem;
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 1rem;
+        }
+
+        .imagen-lateral {
+            flex-shrink: 0;
+            width: 120px;
+            text-align: center;
+        }
+
+        .imagen-lateral img {
+            width: 100%;
+            height: auto;
+            border-radius: 12px;
+            border: 1px solid rgba(70, 130, 200, 0.3);
+            transition: transform 0.3s ease;
+        }
+
+        .imagen-lateral img:hover {
+            transform: scale(1.02);
+            border-color: rgba(59, 130, 246, 0.5);
+        }
+
+        .imagen-leyenda {
+            font-size: 0.65rem;
+            color: #8a9dc0;
+            margin-top: 0.5rem;
+            text-align: center;
+            font-family: 'Horizon', 'Inter', sans-serif;
+        }
+
+        .texto-principal {
+            flex: 1;
+        }
+
+        /* Texto poético con efecto de aparición */
+        .texto-poetico-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem;
+            text-align: center;
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease, transform 0.7s ease;
+        }
+
+        .texto-poetico-container.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .texto-poetico {
+            font-family: 'Horizon', 'Inter', sans-serif;
+            color: #cbd5e6;
+            line-height: 1.8;
+            font-size: 0.95rem;
+            text-align: center;
+            white-space: pre-wrap;
+        }
+
+        /* Footer */
+        footer {
+            position: fixed;
+            bottom: 0;
+            right: 0;
+            padding: 0.4rem 1rem;
+            font-size: 0.45rem;
+            color: #5a6e8a;
+            z-index: 20;
+            background: rgba(0,0,0,0.4);
+            backdrop-filter: blur(4px);
+            border-top-left-radius: 12px;
+            font-family: 'Horizon', 'Inter', sans-serif;
+            letter-spacing: 1px;
+        }
+
+        /* Responsive */
+        @media (max-width: 1200px) {
+            .grid-galeria-5, .grid-galeria-6 {
+                grid-template-columns: repeat(4, 1fr);
+                gap: 1rem;
+            }
+            .grupo-izquierdo, .grupo-derecho {
+                gap: 1rem;
+            }
+            .opcion-texto {
+                font-size: 0.85rem;
+            }
+        }
+
+        @media (max-width: 1000px) {
+            .grupo-izquierdo, .grupo-derecho {
+                gap: 0.8rem;
+            }
+            .opcion-texto {
+                font-size: 0.75rem;
+            }
+            .header-opciones {
+                gap: 1rem;
+            }
+        }
+
+        @media (max-width: 900px) {
+            .detalles-container {
+                padding: 1rem;
+            }
+            .header-opciones {
+                padding: 1rem;
+                gap: 1rem;
+                justify-content: center;
+                flex-direction: column;
+            }
+            .grupo-izquierdo, .grupo-derecho {
+                gap: 1rem;
+                justify-content: center;
+                flex-wrap: wrap;
+                flex: none;
+            }
+            .opcion-texto {
+                font-size: 0.9rem;
+                white-space: normal;
+            }
+            .texto-poetico {
+                font-size: 0.85rem;
+            }
+            .media-principal-contenido img,
+            .media-principal-contenido video,
+            .secuencia-imagen {
+                max-height: 50vh;
+            }
+            .grid-galeria-5, .grid-galeria-6 {
+                grid-template-columns: repeat(3, 1fr);
+                gap: 0.8rem;
+            }
+            .contenido-con-imagen {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+            .imagen-lateral {
+                width: 100px;
+                margin-bottom: 1rem;
+            }
+        }
+
+        @media (max-width: 550px) {
+            .grid-galeria-5, .grid-galeria-6 {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 0.8rem;
+            }
+            .opcion-texto {
+                font-size: 0.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Fila superior: Izquierda - Centro - Derecha -->
+    <div class="header-opciones">
+        <!-- Grupo izquierdo -->
+        <div class="grupo-izquierdo">
+            <a href="./pdf/ADASCUA-ARR.pdf" target="_blank" class="opcion-texto" id="btnPresentacion">Presentación</a>
+            <a href="seccion-detalles.html?proyecto=vortex" class="opcion-texto" data-proyecto="vortex">interior</a>
+            <a href="seccion-detalles.html?proyecto=cristal" class="opcion-texto" data-proyecto="cristal">Complejos</a>
+        </div>
+
+        <!-- ADASCUA centro - REDIRIGE A INDEX -->
+        <div class="adascua-centro">
+            <a href="index.html">
+                <div class="adascua-grande">ADASCUA</div>
+                <div class="made-by">Por Alejandro Rueda Rocha</div>
+            </a>
+        </div>
+
+        <!-- Grupo derecho -->
+        <div class="grupo-derecho">
+            <a href="seccion-detalles.html?proyecto=horizonte" class="opcion-texto" data-proyecto="horizonte">Resurrección</a>
+            <a href="seccion-detalles.html?proyecto=nexo" class="opcion-texto" data-proyecto="nexo">Futuro</a>
+            <a href="https://miro.com/app/board/uXjVHOT4YgM=/?share_link_id=795676115976" target="_blank" class="opcion-texto" id="btnAscuas">Ascuas</a>
+        </div>
+    </div>
+
+    <div class="detalles-container" id="detallesContainer">
+        <!-- El contenido se carga dinámicamente con JavaScript -->
+    </div>
+    
+    <footer>
+        ALEJANDRO RUEDA ROCHA - PROYECTOS 5 - ENTREGA FINAL - TERRITORIOS DIGITALES
+    </footer>
+
+    <script>
+        // ========== FUNCIÓN PARA CREAR SECUENCIA DE IMÁGENES (Fuego interior) ==========
+        function generarSecuenciaImagenes() {
+            const imagenes = [];
+            for (let i = 111; i <= 153; i++) {
+                imagenes.push(`./Imágenes_videos/drive_fotos/${i}_1.jpg`);
+            }
+            return imagenes;
+        }
+
+        // ========== FUNCIÓN PARA CREAR SECUENCIA DE IMÁGENES (Futuro) ==========
+        function generarSecuenciaFuturo() {
+            const imagenes = [];
+            
+            // Imágenes 1-9
+            for (let i = 1; i <= 9; i++) {
+                imagenes.push(`./Imágenes_videos/fotos_futuro/${i}.jpg`);
+            }
+            
+            // Imágenes 110-119 (solo las que existen)
+            const existe = [110, 112, 113, 114, 115, 116, 117, 118, 119];
+            for (let i of existe) {
+                imagenes.push(`./Imágenes_videos/fotos_futuro/${i}.jpg`);
+            }
+            
+            // Imágenes 220-251
+            for (let i = 220; i <= 251; i++) {
+                imagenes.push(`./Imágenes_videos/fotos_futuro/${i}.jpg`);
+            }
+            
+            return imagenes;
+        }
+        
+        // ========== LISTA DE 15 IMÁGENES PARA VORTEX (3 filas de 5) ==========
+        const imagenesVortex = [];
+        for (let i = 1; i <= 15; i++) {
+            imagenesVortex.push(`./Imágenes_videos/imagenes_IA_complejos/${i}.jpeg`);
+        }
+
+        // Clase para manejar la animación de secuencia de imágenes
+        class SecuenciaAnimada {
+            constructor(contenedor, imagenes, intervaloMs = 600) {
+                this.contenedor = contenedor;
+                this.imagenes = imagenes;
+                this.intervaloMs = intervaloMs;
+                this.indiceActual = 0;
+                this.intervalId = null;
+                this.imgElement = null;
+            }
+
+            iniciar() {
+                this.imgElement = document.createElement('img');
+                this.imgElement.className = 'secuencia-imagen';
+                this.imgElement.alt = 'Secuencia de modelo 3D';
+                this.imgElement.style.width = '100%';
+                this.imgElement.style.display = 'block';
+                this.imgElement.style.borderRadius = '24px';
+                
+                this.contenedor.innerHTML = '';
+                this.contenedor.appendChild(this.imgElement);
+                this.cargarImagen(this.indiceActual);
+                
+                this.intervalId = setInterval(() => {
+                    this.siguienteImagen();
+                }, this.intervaloMs);
+            }
+
+            cargarImagen(indice) {
+                if (this.imgElement && this.imagenes[indice]) {
+                    this.imgElement.src = this.imagenes[indice];
+                }
+            }
+
+            siguienteImagen() {
+                this.indiceActual = (this.indiceActual + 1) % this.imagenes.length;
+                this.cargarImagen(this.indiceActual);
+            }
+
+            detener() {
+                if (this.intervalId) {
+                    clearInterval(this.intervalId);
+                    this.intervalId = null;
+                }
+            }
+        }
+
+        let animacionActual = null;
+        const secuenciaVortex = generarSecuenciaImagenes();
+        const secuenciaFuturo = generarSecuenciaFuturo();
+
+        // ========== LISTA DE 18 IMÁGENES PARA RESURRECCIÓN ==========
+        const imagenesResurreccion = [
+            "./Imágenes_videos/fotos_resurreccion/Image1 (1).png",
+            "./Imágenes_videos/fotos_resurreccion/Image6 (5).png",
+            "./Imágenes_videos/fotos_resurreccion/Image8 (1).png",
+            "./Imágenes_videos/fotos_resurreccion/Image12 (1).png",
+            "./Imágenes_videos/fotos_resurreccion/Image13.png",
+            "./Imágenes_videos/fotos_resurreccion/Image14.png",
+            "./Imágenes_videos/fotos_resurreccion/Image16.png",
+            "./Imágenes_videos/fotos_resurreccion/Image17.png",
+            "./Imágenes_videos/fotos_resurreccion/Image19.png",
+            "./Imágenes_videos/fotos_resurreccion/Image22.png",
+            "./Imágenes_videos/fotos_resurreccion/Image55.png",
+            "./Imágenes_videos/fotos_resurreccion/Image56.png",
+            "./Imágenes_videos/fotos_resurreccion/Image57.png",
+            "./Imágenes_videos/fotos_resurreccion/Image58.png",
+            "./Imágenes_videos/fotos_resurreccion/Image59.png",
+            "./Imágenes_videos/fotos_resurreccion/Image61.png",
+            "./Imágenes_videos/fotos_resurreccion/Image62.png",
+            "./Imágenes_videos/fotos_resurreccion/Image63.png"
+        ];
+
+        // ========== LISTA DE 15 IMÁGENES PARA FUTURO (Primera galería - 5 columnas) ==========
+        const imagenesFuturo = [];
+        for (let i = 1; i <= 15; i++) {
+            imagenesFuturo.push(`./Imágenes_videos/images_futuro/Image${i}.png`);
+        }
+
+        // ========== LISTA DE 18 IMÁGENES PARA FUTURO (Segunda galería - 6 columnas) ==========
+        const imagenesFuturo2 = [
+            "./Imágenes_videos/filas6_futuro/Image18.png",
+            "./Imágenes_videos/filas6_futuro/Image20.png",
+            "./Imágenes_videos/filas6_futuro/Image24.png",
+            "./Imágenes_videos/filas6_futuro/Image27.png",
+            "./Imágenes_videos/filas6_futuro/Image28.png",
+            "./Imágenes_videos/filas6_futuro/Image29.png",
+            "./Imágenes_videos/filas6_futuro/Image30.png",
+            "./Imágenes_videos/filas6_futuro/Image31.png",
+            "./Imágenes_videos/filas6_futuro/Image34.png",
+            "./Imágenes_videos/filas6_futuro/Image35.png",
+            "./Imágenes_videos/filas6_futuro/Image19 (1).png",
+            "./Imágenes_videos/filas6_futuro/Image21.png",
+            "./Imágenes_videos/filas6_futuro/Image22 (1).png",
+            "./Imágenes_videos/filas6_futuro/Image23.png",
+            "./Imágenes_videos/filas6_futuro/Image25.png",
+            "./Imágenes_videos/filas6_futuro/Image26.png",
+            "./Imágenes_videos/filas6_futuro/Image32.png",
+            "./Imágenes_videos/filas6_futuro/Image33.png"
+        ];
+
+        // ========== TEXTO CONCEPTUAL DE ADASCUA (para Fuego interior) ==========
+        const textoAdascua = `¿Quién estás en adascua?
+
+Para nosotros, el ser humano es una colección de múltiples etapas y estados; somos el resultado de una secuencia de nosotros mismos, de nuestras fases buenas y malas, pero en conjunto constituimos una única identidad.
+
+La "sombra" representa aquello de lo que nos escondemos, aquello que no queremos afrontar o que permanece en nuestros pensamientos más profundos, a los que rara vez se les da voz. Es aquello que existe, pero que evitamos mirar directamente.
+
+"Ascuas" es un proyecto cuya idea principal se basa en el concepto de quemar y dejar atrás. El fuego se entiende como aquello que nos mueve, que nos ilumina y nos transforma. El objetivo del proyecto es aprender a aceptarlo como parte fundamental del proceso humano.
+
+La sombra no somos nosotros; es aquello que se esconde del fuego, aquello que solo se hace visible cuando es iluminado por él. En este sentido, el fuego se asocia con la vida y la conciencia, mientras que la sombra representa los traumas, miedos y experiencias no resueltas.
+
+Se trata de un espacio mutante. El programa pretende vincular directamente la arquitectura con el proceso vital del ser humano. Se busca reunir al mayor número posible de personas con necesidades de apoyo psicológico y terapéutico. Una vez el edificio alcance su capacidad, el proyecto comienza su funcionamiento activo: un espacio destinado a terapias, tanto grupales como individuales, al encuentro, a la convivencia y a la vida compartida. No es únicamente un espacio de tránsito, sino también un lugar de estancia e internamiento.
+
+A medida que las personas avanzan en su proceso de sanación, van dejando atrás partes de sí mismas, conciliándose con sus "yos" pasados y dando paso a una nueva identidad. De forma paralela, el edificio también se transforma.
+
+Por cada proceso de sanación, el proyecto "se quema", entendiendo este acto como una metáfora de transformación. Sin embargo, este proceso no es destructivo en sentido negativo: al igual que el ser humano, que puede destruirse para reconstruirse, el edificio se autoregenera. De esta forma, tras cada "quema", surge una nueva arquitectura desde lo anterior, simbolizando el nacimiento de un nuevo yo.
+
+Las reparaciones se materializan como parches o reconstrucciones, mientras que las "destrucciones" se interpretan como la acción del fuego simbólico que hace desaparecer partes del cerramiento, permitiendo que el edificio evolucione. Así, el proyecto se plantea como un sistema vivo en constante transformación, cuyo objetivo final es acompañar y potenciar los procesos de sanación del mayor número posible de personas.`;
+
+        // ========== TEXTO NUEVO PARA RESURRECCIÓN ==========
+        const textoResurreccion = `TRATAMIENTO PREPARADO PARA UNIRTE CON TU YO
+
+Se plantea un tratamiento adaptativo, un programa que no finaliza hasta que cada persona pueda reunirse con su propio yo. Este proceso está directamente vinculado a la mutación completa del edificio, entendida como una transformación continua, similar a la metamorfosis de una mariposa.
+
+Por cada persona que es ayudada, el edificio va mutando. Este proceso no se detiene hasta alcanzar su estado final de proyecto. En este sentido, el espacio no se concibe únicamente como un entorno terapéutico pasajero, sino como un sistema activo, vivo y evolutivo.
+
+El conjunto está preparado para desempeñar también un rol psiquiátrico, permitiendo el internamiento de personas que se encuentren en situaciones que lo requieran, adaptándose así a distintos niveles de necesidad y tratamiento.
+
+Implantación, estética y relación con el entorno
+
+Respecto a la implantación, la parcela estará conformada en su gran mayoría por vegetación, generando una barrera natural entre las áreas de tránsito y los espacios construidos. Esta vegetación actúa como filtro ambiental, aportando privacidad, reducción del ruido y una transición más suave entre el exterior y el interior del complejo. El acceso de vehículos se limita a tres entradas principales, con el objetivo de controlar el flujo y reforzar la idea de un entorno más protegido y calmado.
+
+Los tonos del proyecto serán claros, en gamas beige y tierra suave. Esta elección responde a la intención de generar un ambiente sereno, neutro y poco agresivo visualmente. Los colores claros ayudan a reducir la sobreestimulación sensorial y, al mismo tiempo, reflejan mejor la luz natural, aumentando la sensación de amplitud, calma y equilibrio, aspectos fundamentales en un entorno terapéutico.
+
+El conjunto estará orientado principalmente hacia el sur, con el objetivo de maximizar la captación de luz natural a lo largo del día. Esta orientación mejora la calidad espacial interior y favorece el bienestar de los usuarios mediante la presencia constante de luz. Además, el edificio principal, por su mayor altura y posición más retrasada en la parcela, es el que recibe mayor cantidad de luz directa. Esta disposición evita que su sombra interfiera sobre los otros complejos, garantizando que todos los volúmenes dispongan de una correcta iluminación natural, sin jerarquías negativas entre ellos, ya que todos forman parte de un mismo sistema equilibrado.`;
+
+        // ========== TEXTO PARA FUTURO ==========
+        const textoFuturo = `En Ascuas nos definimos como aquello que convierte el fuego en verdad. Entendemos el fuego como un elemento de transición: una fuerza capaz de transformar la materia, el espacio y a las personas. Es el punto de paso entre un estado y otro, entre lo que somos y aquello en lo que podemos convertirnos. Sus distintos comportamientos inspiran tanto el proyecto como el edificio, estableciendo una relación directa entre materia, transformación y experiencia humana.
+
+El fuego y su luz pertenecen a todos, del mismo modo que la energía del sol ilumina sin distinción. Por eso, Ascuas se concibe como un intermediario en el proceso de cambio del ser humano: un sistema que acompaña, guía y facilita la transformación personal.
+
+No somos el destino final, sino el medio a través del cual sucede la transformación. Somos compañía, apoyo y presencia durante ese recorrido. El proyecto camina contigo hasta el momento en que puedas mirar al fuego cara a cara y reconocer que ya formas parte de él.
+
+Entonces, la transformación deja de ser únicamente interior. El edificio permanecerá unido a ti de por vida, mientras que tu propio proceso pasará a alimentar al proyecto, permitiéndole también evolucionar hacia una nueva versión de sí mismo.
+
+Ascuas somos todos aquellos que, alguna vez, necesitaron mirar de frente al fuego que habita en su interior para reencontrarse consigo mismos. El proyecto seguirá existiendo gracias a las personas a las que ayudó, como un acto continuo de gratitud y memoria colectiva. Cada transformación dejará una huella en el edificio, convirtiéndolo en el reflejo vivo de quienes pasaron por él.
+
+Con el tiempo, el complejo evolucionará junto a sus habitantes. Los espacios se volverán más abiertos, más luminosos y más libres, porque el cerramiento habrá desaparecido consumido por el fuego. Ese gesto simboliza la transformación definitiva: entender que el fuego no destruye, sino que nos permite abrirnos, desprendernos de lo impuesto y mostrarnos tal y como realmente somos.`;
+
+        // ========== TEXTO PARA ASCUAS ==========
+        const textoAscuas = `¿Qué es Ascuas?
+
+Ascuas es un proyecto arquitectónico que nace de la necesidad de crear espacios de transformación personal. A través de la arquitectura, buscamos acompañar a las personas en su proceso de sanación y autodescubrimiento.
+
+El proyecto se concibe como un sistema vivo, en constante evolución, que se transforma junto a sus habitantes. Cada persona que pasa por Ascuas deja una huella en el edificio, y el edificio, a su vez, evoluciona para seguir acompañando nuevos procesos.
+
+Ascuas es fuego, es transformación, es encuentro. Es el espacio donde la sombra se ilumina y el fuego interior se convierte en verdad.`;
+
+        // ========== TEXTOS POÉTICOS PARA CADA PROYECTO ==========
+        const textosPoeticos = {
+            vortex: textoAdascua,
+            cristal: `<div style="text-align: center; margin: 2rem auto; max-width: 1000px;">
+    <img src="./Imágenes_videos/Negativa666.jpeg" alt="Leyenda" style="width: 100%; border-radius: 16px; border: 1px solid rgba(70, 130, 200, 0.3);">
+</div>
+
+    <div class="texto-principal">
+        El edificio consta de 5 complejos. A lo largo de estos complejos, así como en las uniones entre plantas desarrolladas, se ha tomado como principal fuente de inspiración la forma en la que el fuego actúa sobre los materiales, las texturas y los espacios, así como la manera en la que la vida —y nosotros mismos— nos transformamos dependiendo de dónde estamos y en qué estado nos encontramos.<br><br>
+
+Por ello, todas estas estructuras se plantean como formas "hinchadas", simbolizando cómo las personas que transitan el edificio han ido dejando una huella en él. Estas formas, marcadas por el fuego y el paso del tiempo, se expanden mediante una idea de ligereza interna, como si una presión invisible —una especie de energía interior— las hubiera ido inflando. Esta condición busca representar cómo la llama interna de cada persona se distribuye y transforma a lo largo de los distintos espacios, dejando rastros de su paso. El edificio es, por tanto, un sistema vivo: por y para el ser humano.<br><br>
+
+El conjunto se organiza en 5 complejos y 3 funciones principales, que estructuran el recorrido y la intensidad del sistema arquitectónico.<br><br>
+
+<strong>Complejo 1 – Función 1 (F1)</strong><br>
+El Complejo 1 actúa como espacio de recepción, espera y tránsito. Es el primer contacto con el edificio. Un lugar donde las personas que desean formar parte del programa explican su situación inicial y son redirigidas en función de la gravedad de su caso.<br>
+Este espacio funciona como umbral: un punto de entrada neutro, donde la identidad aún no ha sido transformada por el edificio.<br><br>
+
+<strong>Complejo 2 – Función grupal y terapias compartidas</strong><br>
+El Complejo 2 está destinado a actividades grupales, visitas al conjunto y espacios de observación. También incluye áreas para terapias colectivas.<br>
+Es uno de los espacios fundamentales del proyecto, ya que favorece la relación entre pacientes, fomentando el apoyo mutuo y la idea de combatir las "sombras" en conjunto. Aquí, el proceso no es individual, sino compartido: la transformación se vuelve visible en los otros.<br><br>
+
+<strong>Complejo 3 – Núcleo de máxima intensidad terapéutica</strong><br>
+El Complejo 3 es la zona de mayor complejidad clínica. Es el espacio destinado a los casos más graves y sensibles dentro del sistema del edificio.<br>
+Su posición, más elevada y más aislada respecto al resto, responde a una intención simbólica: es el punto de máxima exposición a la luz. Representa la fase final del proceso, donde la transformación se vuelve posible de forma más clara.<br>
+Este complejo es también el primero que comienza a transformarse visualmente, como metáfora de que el cambio siempre empieza en algún punto, incluso en los procesos más difíciles. Es un espacio que simboliza que toda situación, por compleja que sea, sigue un recorrido hacia la luz.<br><br>
+
+<strong>Complejo 4 – Área psiquiátrica de mayor control</strong><br>
+El Complejo 4 está destinado a funciones psiquiátricas más intensivas. Se trata de una zona más restringida y controlada, donde los casos requieren mayor seguimiento y estabilidad.<br>
+En sus niveles superiores comienzan a incorporarse pacientes internados, estableciendo una progresión espacial que refleja la evolución del tratamiento y del estado del usuario dentro del edificio.<br><br>
+
+<strong>Complejo 5 – Atención terapéutica intermedia</strong><br>
+El Complejo 5 está destinado a usuarios con necesidades terapéuticas puntuales, personas que mantienen su vida cotidiana pero requieren atención psicológica periódica.<br>
+Es un espacio más abierto y dinámico. Incluye una zona en voladizo orientada al aparcamiento, con tres accesos principales desde el oeste, este y sur de la parcela. Este complejo actúa como transición entre lo cotidiano y lo clínico, entre lo exterior y lo interior.
+    </div>
+</div>`,
+            horizonte: textoResurreccion,
+            nexo: textoFuturo,
+            ascuas: textoAscuas,
+            luz: `“Luz.
+
+Lo único que vence a la sombra. Lo único que da calor.
+
+La luz no pregunta. Entra. Ilumina. Transforma.
+
+No hay rincón oscuro que resista su paso.
+
+Somos luz. O deberíamos serlo.
+
+Pero a veces nos apagamos. A veces nos escondemos.
+
+Rabia contra la muerte de la luz. Porque sin ella, no somos nada.
+
+Enciende una llama. No la dejes morir.
+
+La luz siempre encuentra un camino. Siempre.”`
+        };
+
+        // ========== FUNCIÓN PARA GENERAR GALERÍA DE IMÁGENES CON TÍTULO PERSONALIZADO ==========
+        function generarGaleria(imagenes, columnas, titulo = "Filas de imágenes") {
+            let html = '<div class="galeria-container">';
+            html += `<div class="galeria-titulo">${titulo}</div>`;
+            
+            const claseGrid = columnas === 5 ? 'grid-galeria-5' : 'grid-galeria-6';
+            // Clase especial para las imágenes de Vortex (columnas = 5)
+            const claseImagen = columnas === 5 ? 'grid-imagen-vortex' : 'grid-imagen';
+            
+            for (let i = 0; i < imagenes.length; i += columnas) {
+                html += `<div class="${claseGrid}">`;
+                for (let j = i; j < i + columnas && j < imagenes.length; j++) {
+                    html += `
+                        <div class="grid-item" data-index="${j}">
+                            <img class="${claseImagen}" src="${imagenes[j]}" alt="Imagen del proyecto" loading="lazy">
+                        </div>
+                    `;
+                }
+                html += '</div>';
+            }
+            html += '</div>';
+            return html;
+        }
+
+        // ========== CONFIGURACIÓN DE CONTENIDOS ==========
+        const dataPartes = {
+            vortex: {
+                principal: {
+                    tipo: "secuencia",
+                    imagenes: secuenciaVortex,
+                    titulo: "Fuego interior"
+                },
+                texto: textosPoeticos.vortex,
+                tieneGaleria: true,
+                galeriaImagenes: imagenesVortex,
+                columnasGaleria: 5,
+                tituloGaleria: "Filas de imágenes"
+            },
+            cristal: {
+                principal: {
+                    tipo: "video",
+                    src: "./Imágenes_videos/complejo_modelo.mp4",
+                    titulo: "Complejos"
+                },
+                texto: textosPoeticos.cristal,
+                tieneGaleria: false
+            },
+            horizonte: {
+                principal: {
+                    tipo: "youtube",
+                    src: "https://www.youtube.com/embed/sYbHHQsrd0Q",
+                    titulo: "Resurrección"
+                },
+                texto: textosPoeticos.horizonte,
+                tieneGaleria: true,
+                galeriaImagenes: imagenesResurreccion,
+                columnasGaleria: 6,
+                tituloGaleria: "Imágenes render final"
+            },
+            nexo: {
+                principal: {
+                    tipo: "secuencia",
+                    imagenes: secuenciaFuturo,
+                    titulo: "Futuro"
+                },
+                texto: textosPoeticos.nexo,
+                tieneGaleria: true,
+                galeriaImagenes: imagenesFuturo,
+                columnasGaleria: 5,
+                tituloGaleria: "Imágenes edificio reconstruida",
+                tieneGaleria2: true,
+                galeriaImagenes2: imagenesFuturo2,
+                columnasGaleria2: 6,
+                tituloGaleria2: "Estructura junto al nuevo cerramiento"
+            },
+            ascuas: {
+                principal: {
+                    tipo: "texto",
+                    titulo: "Ascuas"
+                },
+                texto: textosPoeticos.ascuas,
+                tieneGaleria: false
+            },
+            luz: {
+                principal: {
+                    tipo: "gif",
+                    src: "Imágenes_videos/modelo-principal-luz.gif",
+                    titulo: "Casa Luz"
+                },
+                texto: textosPoeticos.luz,
+                tieneGaleria: false
+            }
+        };
+
+        // Función para generar el contenido principal
+        function generarContenidoPrincipal(data) {
+            let html = '';
+            
+            if (data.principal.tipo === 'secuencia') {
+                html = `
+                    <div class="media-principal">
+                        <div class="media-principal-contenido" id="secuenciaContenedor">
+                            <!-- Aquí se cargará la secuencia animada -->
+                        </div>
+                        <div class="titulo-principal">
+                            <h3>${data.principal.titulo}</h3>
+                        </div>
+                    </div>
+                `;
+            } else if (data.principal.tipo === 'gif') {
+                html = `
+                    <div class="media-principal">
+                        <div class="media-principal-contenido">
+                            <img src="${data.principal.src}" alt="${data.principal.titulo}" style="width:100%; display:block; border-radius:24px;">
+                        </div>
+                        <div class="titulo-principal">
+                            <h3>${data.principal.titulo}</h3>
+                        </div>
+                    </div>
+                `;
+            } else if (data.principal.tipo === 'youtube') {
+                html = `
+                    <div class="media-principal">
+                        <div class="media-principal-contenido">
+                            <iframe 
+                                src="${data.principal.src}"
+                                style="width:100%; height:500px; border-radius:24px;"
+                                frameborder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                allowfullscreen>
+                            </iframe>
+                        </div>
+                        <div class="titulo-principal">
+                            <h3>${data.principal.titulo}</h3>
+                        </div>
+                    </div>
+                `;
+            } else if (data.principal.tipo === 'texto') {
+                html = `
+                    <div class="media-principal">
+                        <div class="titulo-principal">
+                            <h3>${data.principal.titulo}</h3>
+                        </div>
+                    </div>
+                `;
+            } else {
+                html = `
+                    <div class="media-principal">
+                        <div class="media-principal-contenido">
+                            <video autoplay loop muted playsinline style="width:100%; display:block; border-radius:24px;">
+                                <source src="${data.principal.src}" type="video/mp4">
+                            </video>
+                        </div>
+                        <div class="titulo-principal">
+                            <h3>${data.principal.titulo}</h3>
+                        </div>
+                    </div>
+                `;
+            }
+            
+            // Añadir primera galería si tiene
+            if (data.tieneGaleria && data.galeriaImagenes) {
+                const columnas = data.columnasGaleria || 6;
+                const titulo = data.tituloGaleria || "Filas de imágenes";
+                html += generarGaleria(data.galeriaImagenes, columnas, titulo);
+            }
+            
+            // Añadir segunda galería si tiene (para Futuro)
+            if (data.tieneGaleria2 && data.galeriaImagenes2) {
+                const columnas2 = data.columnasGaleria2 || 6;
+                const titulo2 = data.tituloGaleria2 || "Filas de imágenes";
+                html += generarGaleria(data.galeriaImagenes2, columnas2, titulo2);
+            }
+            
+            return html;
+        }
+
+        // Función para generar todo el contenido
+        function generarContenido(proyectoId) {
+            const data = dataPartes[proyectoId];
+            if (!data) return "<p>Contenido no disponible</p>";
+            
+            const principalHTML = generarContenidoPrincipal(data);
+            
+            const textoHTML = `
+                <div class="texto-poetico-container" id="textoPoeticoContainer">
+                    <div class="texto-poetico">${data.texto}</div>
+                </div>
+            `;
+            
+            return principalHTML + textoHTML;
+        }
+
+        // Iniciar la animación de secuencia
+        function iniciarSecuenciaSiAplica(proyectoId) {
+            if (animacionActual) {
+                animacionActual.detener();
+                animacionActual = null;
+            }
+            
+            const data = dataPartes[proyectoId];
+            if (data && data.principal.tipo === 'secuencia') {
+                const contenedor = document.getElementById('secuenciaContenedor');
+                if (contenedor) {
+                    animacionActual = new SecuenciaAnimada(contenedor, data.principal.imagenes, 600);
+                    animacionActual.iniciar();
+                }
+            }
+        }
+
+        // Iniciar observador de scroll para el texto y las imágenes de galería
+        function iniciarObservadores() {
+            // Observador para el texto
+            const textoContainer = document.querySelector('.texto-poetico-container');
+            if (textoContainer) {
+                const observer = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add('visible');
+                            observer.unobserve(entry.target);
+                        }
+                    });
+                }, { threshold: 0.2 });
+                observer.observe(textoContainer);
+            }
+            
+            // Observador para las imágenes de la galería
+            const gridItems = document.querySelectorAll('.grid-item');
+            if (gridItems.length > 0) {
+                const observer = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add('visible');
+                            observer.unobserve(entry.target);
+                        }
+                    });
+                }, { threshold: 0.1 });
+                gridItems.forEach(item => observer.observe(item));
+            }
+        }
+
+        // ========== OBTENER PROYECTO DE LA URL ==========
+        function obtenerProyectoDeURL() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const proyecto = urlParams.get('proyecto');
+            if (proyecto && dataPartes[proyecto]) {
+                return proyecto;
+            }
+            return 'vortex';
+        }
+
+        // ========== RENDERIZAR CONTENIDO ==========
+        const container = document.getElementById('detallesContainer');
+        
+        function renderizar(proyectoId) {
+            container.innerHTML = generarContenido(proyectoId);
+            iniciarSecuenciaSiAplica(proyectoId);
+            iniciarObservadores();
+            
+            // Actualizar estilos de los botones activos
+            document.querySelectorAll('.opcion-texto').forEach(btn => {
+                btn.style.background = 'linear-gradient(135deg, #e0e0e0 0%, #888888 100%)';
+                btn.style.backgroundClip = 'text';
+                btn.style.webkitBackgroundClip = 'text';
+                btn.style.color = 'transparent';
+            });
+            
+            const btnActivo = document.querySelector(`.opcion-texto[data-proyecto="${proyectoId}"]`);
+            if (btnActivo) {
+                btnActivo.style.background = 'linear-gradient(135deg, #FFFFFF 0%, #cccccc 100%)';
+                btnActivo.style.backgroundClip = 'text';
+                btnActivo.style.webkitBackgroundClip = 'text';
+                btnActivo.style.color = 'transparent';
+            }
+        }
+
+        // ========== CAPTURAR CLICS PARA NO RECARGAR (excluyendo enlaces externos y PDF) ==========
+        document.querySelectorAll('.opcion-texto').forEach(enlace => {
+            const href = enlace.getAttribute('href');
+            
+            // Si es un enlace externo (http, https) o un PDF, NO interceptar
+            if (href && (href.startsWith('http://') || href.startsWith('https://') || href.includes('.pdf'))) {
+                return;  // Dejar que funcione normalmente
+            }
+            
+            enlace.addEventListener('click', (e) => {
+                e.preventDefault();
+                const proyecto = enlace.getAttribute('data-proyecto');
+                if (proyecto) {
+                    const nuevaURL = `${window.location.pathname}?proyecto=${proyecto}`;
+                    window.history.pushState({}, '', nuevaURL);
+                    renderizar(proyecto);
+                }
+            });
+        });
+        
+        // Manejar navegación con botones atrás/adelante
+        window.addEventListener('popstate', () => {
+            const proyecto = obtenerProyectoDeURL();
+            renderizar(proyecto);
+        });
+        
+        // Inicializar
+        const proyectoInicial = obtenerProyectoDeURL();
+        renderizar(proyectoInicial);
+    </script>
+</body>
+</html>
